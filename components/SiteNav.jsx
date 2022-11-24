@@ -1,0 +1,67 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+function SiteNav(props) {
+  return (
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+      <div className="container">
+        <Link to="/" className="navbar-brand">
+          <img src="https://pw.sabio.la/images/Sabio.png" width="30" height="30" className="d-inline-block align-top" alt="Sabio" />
+        </Link>
+
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarsExampl1e04">
+          <ul className="navbar-nav me-auto mb-2 mb-md-0">
+            <li className="nav-item">
+              <Link to="/" className="nav-link px-2 text-white link-button">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/friends" className="nav-link px-2 text-white link-button">
+                Friends
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/jobs" href="#" className="nav-link px-2 text-white link-button">
+                Jobs
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/companies" href="#" className="nav-link px-2 text-white link-button">
+                Tech Companies
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/events" href="#" className="nav-link px-2 text-white link-button">
+                Events
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/test" className="nav-link px-2 text-white link-button">
+                Test and Ajax Call
+              </Link>
+            </li>
+          </ul>
+          <div className="text-end">
+            <Link to="/" className="align-items-center mb-2 me-2 mb-lg-0 text-white text-decoration-none">
+              {props.currentUser.firstName} {props.currentUser.lastName}
+            </Link>
+            <Link to="/login" type="button" className="btn btn-outline-light me-2">
+              Login
+            </Link>
+
+            <Link to="/register" type="button" className="btn btn-warning">
+              Register
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default SiteNav;
